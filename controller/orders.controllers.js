@@ -15,7 +15,7 @@ const addOrder = async(req,res)=>{
     try{
         const postedData = new OrderModel(data);
         await postedData.save();
-        res.status(200).send({"msg":"New order data has been posted"})
+        res.status(200).send({"msg":"New order data has been posted",data:postedData})
     } 
     catch(err){
         res.status(400).send({ "msg" : error.message });
